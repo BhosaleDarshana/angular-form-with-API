@@ -1,0 +1,23 @@
+<p>update restraurants</p>
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>success</strong> Your data updated successfully.
+    <button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+<h1>EDIT Restraurants here</h1>
+
+<form [formGroup]="editResto" (ngSubmit)="getUpdateRestro()">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Name</label>
+      <input type="text" class="form-control" aria-describedby="emailHelp" formControlName="name">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Address</label>
+      <input type="text" class="form-control" formControlName="address">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Email</label>
+        <input type="email" class="form-control" formControlName="email">
+      </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>

@@ -1,0 +1,23 @@
+<p>list-resto works!</p>
+
+<table class="table">
+    <thead>
+      <tr>
+          <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Email</th>
+        <th scope="col">Operations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of collection">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.address}}</td>
+        <td>{{item.email}}</td>
+        <td><i (click)="deleteRestro(item.id)" class="fa fa-trash" style="font-size:30px;color:red;"></i>
+        <a routerLink="/update/{{item.id}}"><i class="fa fa-edit mx-2" style="font-size:30px;color:blue;"></i></a></td>
+      </tr>
+    </tbody>
+  </table>
